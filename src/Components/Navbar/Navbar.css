@@ -19,10 +19,13 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
+    box-shadow: 10px 3px 5px grey;
+    align-content: center;
 }
 
 .dropdown-menu {
@@ -65,7 +68,7 @@ nav {
 
 .nav__logo {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 550;
     padding-left: 2rem;
     color: #0d213f;
     cursor: pointer;
@@ -92,16 +95,17 @@ nav {
     align-items: center;
     gap: 1.5rem;
     font-size: 1rem;
-    font-weight: bolder;
+    font-weight: bold;
     margin-right: 1rem;
 }
 
 .link a {
     transition: 0.3s;
+    padding-bottom: 1.5em;
 }
 
 .link a:hover {
-    color: #3685fb;
+    color: #2190FF;
 }
 
 /* Media queries for mobile responsiveness */
@@ -152,13 +156,19 @@ nav {
     }
 }
 
+.logo {
+ color: #3685fb;
+}
+
 .btn1 {
     border: 2px solid #3685fb;
     background-color: white;
     border-radius: 50px;
     cursor: pointer;
     padding: 0.5rem;
-    font-weight: bolder;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    width: 6rem;
 }
 
 .btn1:hover {
