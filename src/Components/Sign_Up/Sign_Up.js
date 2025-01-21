@@ -6,15 +6,25 @@ import { API_URL } from '../../config';
 
 // Function component for Sign Up form
 const Sign_Up = () => {
-    // State variables using useState hook
+    const initialFormState = {
+        name: '',
+        email: '',
+        phone: '',
+        password: ''
+      };
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState(''); // State to show error messages
+    const [formData, setFormData] = useState(initialFormState); // Saves form state
     const navigate = useNavigate(); // Navigation hook from react-router
 
-    // Function to handle form submission
+      const handleReset = () => {
+            setFormData(initialFormState);
+        };
+
     const register = async (e) => {
         e.preventDefault(); // Prevent default form submission
 
@@ -33,6 +43,8 @@ const Sign_Up = () => {
         });
 
         const json = await response.json(); // Parse the response JSON
+
+  
 
         if (json.authtoken) {
             // Store user data in session storage
@@ -60,14 +72,22 @@ const Sign_Up = () => {
         <div className="container" style={{marginTop:'5%'}}>
             <div className="signup-grid">
                 <div className="signup-form">
-                    <form method="POST" onSubmit={register}>
-                        <h1>Sign Up</h1>
+                    <form method="POST" onSubmit={register}>  
                         <div className="form-group">
+                            <h1>Sign Up</h1>
                             <label htmlFor="email">* Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" required />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                             <label htmlFor="name">* Name</label>
                             <input value={name} onChange={(e) => setName(e.target.value)} type="name" name="name" id="name" className="form-control" placeholder="Enter your full name" aria-describedby="helpId" required />
+                            <label htmlFor="phone">* Phone number</label>
+                            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" required />
+                            <label htmlFor="password">* Password</label>
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your new password" aria-describedby="helpId" required />
+                            <div className="btn-group">
+                                <button onClick={register} className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
+                                <button onClick={handleReset} className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
+                            </div>
                         </div>
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                     </form>

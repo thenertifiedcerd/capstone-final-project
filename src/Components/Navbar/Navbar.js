@@ -33,11 +33,13 @@ const Navbar = () => {
             </a>
         </li>
         </Link>
+        <Link to='/login'>
         <li className="link">
             <a href="../Login/Login.html">
                 <button className="btn1">Log In</button>
             </a>
         </li>
+        </Link>
     </ul>
 </nav>
     </>

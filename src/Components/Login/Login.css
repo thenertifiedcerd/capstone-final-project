@@ -25,6 +25,7 @@ a {
 .login-text {
     margin: 1rem;
     margin-left: 0;
+    justify-content: space-between;
 }
 .login-form {
     width: 100%;

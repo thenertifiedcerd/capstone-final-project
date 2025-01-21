@@ -72,6 +72,8 @@ a {
 
 .form-group {
     margin-bottom: 20px;
+    align-items: left;
+    text-align: left;
 }
 
 .form-group label {
