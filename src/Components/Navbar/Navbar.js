@@ -20,12 +20,15 @@ const Navbar = () => {
         <i className="fa fa-times fa fa-bars"></i>
     </div>
     <ul className="nav__links active">
+        <Link to='/'>
         <li className="link">
             <a href="../Landing_Page/LandingPage.html">Home</a>
-        </li>
+        </li></Link>
+        <Link to='/appointments'>
         <li className="link">
             <a href="#">Appointments</a>
         </li>
+        </Link>
         <Link to='/signup'>
         <li className="link">
             <a href="../Sign_Up//Sign_Up.html">
