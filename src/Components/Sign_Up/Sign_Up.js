@@ -61,6 +61,7 @@ const Sign_Up = () => {
             <div className="signup-grid">
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>
+                        <h1>Sign Up</h1>
                         <div className="form-group">
                             <label htmlFor="email">* Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" required />

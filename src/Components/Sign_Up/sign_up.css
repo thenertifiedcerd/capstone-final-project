@@ -45,6 +45,10 @@ a {
 .signup-text1  span{
 }
 .signup-form {
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
+    height: relative;
+    width: 30vw;
 }
 
 .signup {
