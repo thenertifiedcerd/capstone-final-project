@@ -1,34 +1,33 @@
-// Following code has been commented with appropriate comments for your reference.
 import React, { useState } from 'react';
 import './sign_up.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
-// Function component for Sign Up form
 const Sign_Up = () => {
     const initialFormState = {
         name: '',
         email: '',
         phone: '',
-        password: ''
+        password: '',
+        role: '' // Add role to the initial form state
       };
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
-    const [showerr, setShowerr] = useState(''); // State to show error messages
-    const [formData, setFormData] = useState(initialFormState); // Saves form state
-    const navigate = useNavigate(); // Navigation hook from react-router
+    const [role, setRole] = useState(''); // State for role
+    const [showerr, setShowerr] = useState('');
+    const [formData, setFormData] = useState(initialFormState);
+    const navigate = useNavigate();
 
-      const handleReset = () => {
-            setFormData(initialFormState);
-        };
+    const handleReset = () => {
+        setFormData(initialFormState);
+    };
 
     const register = async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
-        // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
             headers: {
@@ -39,27 +38,25 @@ const Sign_Up = () => {
                 email: email,
                 password: password,
                 phone: phone,
+                role: role, // Include role in the request body
             }),
         });
 
-        const json = await response.json(); // Parse the response JSON
-
-  
+        const json = await response.json();
 
         if (json.authtoken) {
-            // Store user data in session storage
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
+            sessionStorage.setItem("role", role); // Store role in session storage
 
-            // Redirect user to home page
             navigate("/");
-            window.location.reload(); // Refresh the page
+            window.location.reload();
         } else {
             if (json.errors) {
                 for (const error of json.errors) {
-                    setShowerr(error.msg); // Show error messages
+                    setShowerr(error.msg);
                 }
             } else {
                 setShowerr(json.error);
@@ -67,7 +64,6 @@ const Sign_Up = () => {
         }
     };
 
-    // JSX to render the Sign Up form
     return (
         <div className="container" style={{marginTop:'5%'}}>
             <div className="signup-grid">
@@ -84,12 +80,17 @@ const Sign_Up = () => {
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" required />
                             <label htmlFor="password">* Password</label>
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your new password" aria-describedby="helpId" required />
+                            <label htmlFor="role">* Role</label>
+                            <select value={role} onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" required>
+                                <option value="" disabled>Select your role</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
                             <div className="btn-group">
                                 <button onClick={register} className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
                                 <button onClick={handleReset} className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
                             </div>
                         </div>
-                        {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                     </form>
                 </div>
             </div>
@@ -97,4 +98,4 @@ const Sign_Up = () => {
     );
 }
 
-export default Sign_Up; // Export the Sign_Up component for use in other components
+export default Sign_Up;
