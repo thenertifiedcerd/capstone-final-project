@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
+import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Landingpage from './Components/Landing_Page/Landingpage';
 import './App.css';
 
@@ -14,8 +15,7 @@ function App() {
           <Landingpage />
           {/* Set up the Routes for different pages */}
           <Routes>
-            
-            {/* Define individual Route components for different pages */}
+            <Route path='/signup' element={<Sign_Up />} />
           </Routes>
         </BrowserRouter>
     </div>
