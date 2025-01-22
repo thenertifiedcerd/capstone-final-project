@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Popup from 'reactjs-popup';
+import React, { useState } from 'react';
 import 'reactjs-popup/dist/index.css';
-import './DoctorCardIC.css';
-import AppointmentFormIC from '../AppointmentFormIC/AppointmentFormIC'
+import Popup from 'reactjs-popup';
+import './DoctorCard.css';
+import AppointmentForm from '../AppointmentForm/AppointmentForm';
 import { v4 as uuidv4 } from 'uuid';
-
 
 const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
@@ -28,6 +27,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
     setAppointments(updatedAppointments);
     setShowModal(false);
   };
+
 
   return (
     <div className="doctor-card-container">
@@ -89,12 +89,13 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
                     <div className="bookedInfo" key={appointment.id}>
                       <p>Name: {appointment.name}</p>
                       <p>Phone Number: {appointment.phoneNumber}</p>
+                      <p>Date of Appointment: {appointment.date}</p>
                       <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
                     </div>
                   ))}
                 </>
               ) : (
-                <AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
+                <AppointmentForm doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
               )}
             </div>
           )}
