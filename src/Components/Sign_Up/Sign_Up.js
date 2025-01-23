@@ -71,6 +71,12 @@ const Sign_Up = () => {
                     <form method="POST" onSubmit={register}>  
                         <div className="form-group">
                             <h1>Sign Up</h1>
+                            <label htmlFor="role">* Role</label>
+                            <select value={role} onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" required>
+                                <option value="" disabled>Select your role</option>
+                                <option value="admin">Doctor</option>
+                                <option value="user">Patient</option>
+                            </select>
                             <label htmlFor="email">* Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" required />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
@@ -80,12 +86,7 @@ const Sign_Up = () => {
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" required />
                             <label htmlFor="password">* Password</label>
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your new password" aria-describedby="helpId" required />
-                            <label htmlFor="role">* Role</label>
-                            <select value={role} onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" required>
-                                <option value="" disabled>Select your role</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                            </select>
+                
                             <div className="btn-group">
                                 <button onClick={register} className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
                                 <button onClick={handleReset} className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
