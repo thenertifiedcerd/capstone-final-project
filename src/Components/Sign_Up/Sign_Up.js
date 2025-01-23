@@ -25,9 +25,10 @@ const Sign_Up = () => {
         setFormData(initialFormState);
     };
 
-    const register = async (e) => {
-        e.preventDefault();
+ const register = async (e) => {
+    e.preventDefault();
 
+    try {
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
             headers: {
@@ -38,18 +39,18 @@ const Sign_Up = () => {
                 email: email,
                 password: password,
                 phone: phone,
-                role: role, // Include role in the request body
+                role: role,
             }),
         });
 
         const json = await response.json();
 
-        if (json.authtoken) {
+        if (response.ok) {
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
-            sessionStorage.setItem("role", role); // Store role in session storage
+            sessionStorage.setItem("role", role);
 
             navigate("/");
             window.location.reload();
@@ -62,7 +63,10 @@ const Sign_Up = () => {
                 setShowerr(json.error);
             }
         }
-    };
+    } catch (error) {
+        setShowerr("An error occurred: " + error.message);
+    }
+};
 
     return (
         <div className="container" style={{marginTop:'5%'}}>
