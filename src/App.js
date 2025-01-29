@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
-import DoctorCard from './Components/DoctorCard/DoctorCard';
-import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import Landingpage from './Components/Landing_Page/Landingpage';
 import './App.css';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';

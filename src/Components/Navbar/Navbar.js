@@ -26,6 +26,7 @@ const Navbar = () => {
         </Link>
         <Link to='/appointments'>
         <li className="link">
+            Book an Appointment
         </li>
         </Link>
         <Link to='/signup'>
