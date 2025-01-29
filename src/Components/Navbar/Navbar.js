@@ -21,26 +21,21 @@ const Navbar = () => {
     </div>
     <ul className="nav__links active">
         <Link to='/'>
-        <li className="link">
-            <a href="../Landing_Page/LandingPage.html">Home</a>
-        </li></Link>
+        <li className="link">Home
+        </li>
+        </Link>
         <Link to='/appointments'>
         <li className="link">
-            <a href="#">Appointments</a>
         </li>
         </Link>
         <Link to='/signup'>
         <li className="link">
-            <a href="../Sign_Up//Sign_Up.html">
                 <button className="btn1">Sign Up</button>
-            </a>
         </li>
         </Link>
         <Link to='/login'>
         <li className="link">
-            <a href="../Login/Login.html">
                 <button className="btn1">Log In</button>
-            </a>
         </li>
         </Link>
     </ul>
