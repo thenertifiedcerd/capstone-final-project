@@ -5,11 +5,11 @@ const UserSection = () => {
   // State variable to track if the user is logged in
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Assume you have stored a value in sessionStorage with the key 'userEmail'
-const userEmail = sessionStorage.getItem('userEmail');
+  // Assume you have stored a value in sessionStorage with the key 'email'
+const email = sessionStorage.getItem('email');
 
-if (userEmail) {
-  console.log('User Email:', userEmail);
+if (email) {
+  console.log('User Email:', email);
 } else {
   console.log('No user email found in sessionStorage.');
 }
@@ -26,7 +26,7 @@ if (userEmail) {
       </button>
 
       {isLoggedIn && (
-          <h3>Welcome, {userEmail}!</h3>
+          <h3>Welcome, {email}!</h3>
       )}
     </div>
   );
