@@ -1,20 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import UserSection from './UserSection';
 import './Navbar.css';
 
 const handleClick = () => {
   // Your logic here
 };
-
-// Assume you have stored a value in sessionStorage with the key 'userEmail'
-const userEmail = sessionStorage.getItem('userEmail');
-
-if (userEmail) {
-  console.log('User Email:', userEmail);
-} else {
-  console.log('No user email found in sessionStorage.');
-}
 
 const Navbar = () => {
   return (
@@ -46,14 +37,7 @@ const Navbar = () => {
         </Link>
         <Link to='/login'>
         <li className="link">
-                <button className="btn1" onClick={toggleLogin}>{isLoggedIn ? 'Log Out' : 'Log In'}</button>
-                {/* Display this section only if the user is logged in */}
-      {isLoggedIn && (
-        <div className="user-section">
-          <h2>Welcome, {userEmail}!</h2>
-        </div>
-      )}
-
+        <UserSection />
         </li>
         </Link>
     </ul>

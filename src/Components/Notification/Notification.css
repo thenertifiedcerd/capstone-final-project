@@ -1,16 +1,16 @@
 /* Notification.css */
 
 .notification {
-    background-color: #f8d7da; /* Light red background for error notifications */
-    color: #721c24; /* Dark red text color */
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #f5c6cb; /* Border color matching the background */
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .notification p {
-    margin: 0;
-    font-size: 16px;
-  }
+  background-color: #f8d7da; /* Light red background for error notifications */
+  color: #721c24; /* Dark red text color */
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #f5c6cb; /* Border color matching the background */
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 16px;
+}
