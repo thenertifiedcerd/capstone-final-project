@@ -132,7 +132,7 @@
     padding: 10px 12px;
     column-gap: 14px;
     cursor: pointer;
-    text-align: left;
+    justify-content: space-between;
 }
 
 .search-doctor-result-item:hover {
