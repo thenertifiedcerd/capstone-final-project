@@ -186,7 +186,6 @@ nav {
     padding: 0.5rem;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
-    w
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,17 +199,11 @@ nav {
 .btn3 {
     background-color: #cb0808;
     color: #ffffff;
+    transition: background-color 0.15s ease-in-out;
 }
 
-&hover {
+.btn3:hover {
     border: 2px solid #cb0808;
     background-color: white;
     color: #cb0808;
-    border-radius: 50px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}{
-    
 }

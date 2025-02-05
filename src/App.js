@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import LandingPage from './Components/Landing_Page/Landing_Page';
 import SignUp from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
-import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
-import AppointmentsPage from './Components/AppointmentsPage/AppointmentsPage';
+import Landingpage from './Components/Landing_Page/Landingpage';
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
+import AppointmentForm from './Components/AppointmentForm/AppointmentForm';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
-import ReportsLayout from './Components/ReportsLayout/ReportsLayout'; // Updated path for ReportsPage
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout'; // Updated path for ReportForm
 import ProfileCard from './Components/ProfileCard/ProfileCard';
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Landingpage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/instantconsultation" element={<InstantConsultation />} />
-          <Route path="/searchdoctors" element={<AppointmentsPage />} />
+          <Route path="/searchdoctors" element={<InstantConsultation />} />
           <Route path="/reviews" element={<ReviewForm />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/reports" element={<ReportsLayout />} />
