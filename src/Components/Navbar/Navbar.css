@@ -183,7 +183,10 @@ nav {
     background-color: white;
     color: #3685fb;
     border-radius: 50px;
-    height: 30px;
+    padding: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    w
     display: flex;
     align-items: center;
     justify-content: center;
