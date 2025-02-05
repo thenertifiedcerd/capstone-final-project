@@ -29,6 +29,13 @@ nav {
     align-content: center;
 }
 
+.profile-container {
+    display: flex; /* Align items and justify content */
+    align-items: center; /* Align items and justify content */
+    justify-content: center; /* Align items and justify content */
+    padding: 0 1rem; /* Add some padding for better appearance */
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -183,6 +190,7 @@ nav {
     background-color: white;
     color: #3685fb;
     border-radius: 50px;
+    width: 6rem;
     padding: 0.5rem;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
@@ -200,6 +208,11 @@ nav {
     background-color: #cb0808;
     color: #ffffff;
     transition: background-color 0.15s ease-in-out;
+    border-radius: 50px;
+    width: 6rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    display: flex;
 }
 
 .btn3:hover {

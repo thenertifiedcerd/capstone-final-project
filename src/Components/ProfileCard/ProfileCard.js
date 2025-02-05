@@ -114,6 +114,7 @@ const ProfileCard = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
+    <div className='background-overlay'>
     <div ref={popupRef} className="profile-popup">
       <div className="profile-navigation">
         <a href="#profile" onClick={() => handleViewChange("profile")} className="profile-link">Your Profile</a>
@@ -163,6 +164,7 @@ const ProfileCard = ({ isOpen, onClose }) => {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 };
