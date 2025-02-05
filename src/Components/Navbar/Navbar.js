@@ -71,8 +71,7 @@ const Navbar = () => {
                     <Link to="/instantconsultation">Instant Consultation</Link>
                 </li>
                 {isLoggedIn ? (
-                    <div className="profile-container">
-                        <ul>
+<>
                         <li className="link" onClick={handleProfileIconClick}>
                             <i className="fa fa-user-circle"></i>
                         </li>
@@ -82,14 +81,15 @@ const Navbar = () => {
                         <li className="link">
                             <button className="btn3" onClick={handleLogout}>Logout</button>
                         </li>
-                        </ul>
+                        <div className='profile-container'>
                         {showProfileCard && (
                             <ProfileCard
                                 isOpen={showProfileCard}
                                 onClose={() => setShowProfileCard(false)}
                             />
                         )}
-                    </div>
+                        </div>
+</>
                 ) : (
                     <>
                         <li className="link">

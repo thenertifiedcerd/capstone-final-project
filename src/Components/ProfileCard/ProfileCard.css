@@ -8,6 +8,7 @@
     position: fixed; /* Fix the popup position on the screen */
     width: 300px; /* Set a fixed width */
     padding: 20px; /* Add padding for content spacing */
+    padding-right: 30rem;
     margin-top: 4rem;
     background-color: #fff; /* White background for the popup */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */

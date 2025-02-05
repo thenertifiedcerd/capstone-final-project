@@ -205,18 +205,20 @@ nav {
 }
 
 .btn3 {
-    background-color: #cb0808;
-    color: #ffffff;
+    border: 2px solid #cb0808;
+    background-color: white;
+    color: #cb0808;
     transition: background-color 0.15s ease-in-out;
     border-radius: 50px;
     width: 6rem;
     padding: 0.5rem;
     font-weight: bold;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn3:hover {
-    border: 2px solid #cb0808;
-    background-color: white;
-    color: #cb0808;
+    background-color: #cb0808;
+    color: #ffffff;
 }
