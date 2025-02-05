@@ -1,7 +1,7 @@
 import './Notification.css';
 import React, { useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
-import { useUser } from '../contexts/UserContext';
+import { useUser, UserProvider, UserContext } from '../contexts/UserContext';
 
 const Notification = ({ children }) => {
   const { isLoggedIn, setIsLoggedIn, username, setUsername, doctorData, setDoctorData, appointmentData, setAppointmentData } = useUser();

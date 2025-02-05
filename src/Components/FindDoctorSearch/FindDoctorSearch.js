@@ -7,11 +7,21 @@ const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ENT) Specialist', 'Homeopath', 'Geriatrics'
 ]
 
-const FindDoctorSearch = ({ onSpecialitySelect }) => {
+const FindDoctorSearch = ({ onSpecialitySelect = () => {} }) => {
     const [doctorResultHidden, setDoctorResultHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const [specialities, setSpecialities] = useState(initSpeciality);
     const navigate = useNavigate();
+    const searchRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+  if (searchRef.current && !searchRef.current.contains(event.target)) {
+    setSearchDoctor('');
+    setDoctorResultHidden(true);
+    // Reset to initial doctors list
+    onSpecialitySelect('');
+  }
+};
 
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
