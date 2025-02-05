@@ -16,10 +16,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
         <UserProvider>
-        <Notification />
-        </UserProvider>
+         <Navbar />
+         <Notification>
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/signup" element={<SignUp />} />
@@ -31,6 +30,8 @@ function App() {
           <Route path="/reports" element={<ReportsLayout />} />
           <Route path="/profile" element={<ProfileCard />} /> {/* Ensure this route exists */}
         </Routes>
+        </Notification>
+        </UserProvider>
       </BrowserRouter>
     </div>
   );
