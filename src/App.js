@@ -1,30 +1,35 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import Sign_Up from './Components/Sign_Up/Sign_Up';
+import LandingPage from './Components/Landing_Page/Landing_Page';
+import SignUp from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
-import Landingpage from './Components/Landing_Page/Landingpage';
-import './App.css';
-import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
+import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
+import AppointmentsPage from './Components/AppointmentsPage/AppointmentsPage';
+import Notification from './Components/Notification/Notification';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout'; // Updated path for ReportsPage
+import ProfileCard from './Components/ProfileCard/ProfileCard';
 
 function App() {
   return (
     <div className="App">
-        {/* Set up BrowserRouter for routing */}
-        <BrowserRouter>
-          {/* Display the Navbar component */}
-          <Navbar/>
-          {/* Set up the Routes for different pages */}
-          <Routes>
-            <Route path='/' element={<Landingpage />} />
-            <Route path='/signup' element={<Sign_Up />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/appointments' element={<InstantConsultation />}/>
-            <Route path='/instant-consultation' element={<InstantConsultation />}/>
-          </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/instantconsultation" element={<InstantConsultation />} />
+          <Route path="/searchdoctors" element={<AppointmentsPage />} />
+          <Route path="/reviews" element={<ReviewForm />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/reports" element={<ReportsLayout />} />
+          <Route path="/profile" element={<ProfileCard />} /> {/* Ensure this route exists */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default App
