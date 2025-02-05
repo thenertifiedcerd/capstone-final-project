@@ -181,13 +181,12 @@ nav {
 .btn2 {
     border: 2px solid #3685fb;
     background-color: white;
-    color: black;
+    color: #3685fb;
     border-radius: 50px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3px;
 }
 
 .btn2:hover {
@@ -195,4 +194,20 @@ nav {
     color: white;
 }
 
+.btn3 {
+    background-color: #cb0808;
+    color: #ffffff;
+}
 
+&hover {
+    border: 2px solid #cb0808;
+    background-color: white;
+    color: #cb0808;
+    border-radius: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}{
+    
+}
