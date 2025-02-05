@@ -7,26 +7,17 @@ const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ENT) Specialist', 'Homeopath', 'Geriatrics'
 ]
 
-const FindDoctorSearch = ({ onSpecialitySelect, initialDoctors }) => {
+const FindDoctorSearch = ({ onSpecialitySelect }) => {
     const [doctorResultHidden, setDoctorResultHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const [specialities, setSpecialities] = useState(initSpeciality);
-    const searchRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        // Pass selected speciality to parent component (AppointmentsPage)
-        onSpecialitySelect(speciality);
-    };
-
-    const handleClickOutside = (event) => {
-        if (searchRef.current && !searchRef.current.contains(event.target)) {
-            setSearchDoctor('');
-            setDoctorResultHidden(true);
-            // Reset to initial doctors list
-            onSpecialitySelect('');
-        }
+        navigate(`/instantconsultation?speciality=${speciality}`);
+        window.location.reload();
     };
 
     useEffect(() => {
